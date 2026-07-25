@@ -1,7 +1,27 @@
 aid: coohua
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/coohua.png
 name: coohua
-description: coohua is a company surfaced as a portfolio company of qiming and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Coohua (酷划在线) is a Beijing-based Chinese mobile advertising company founded in 2014 and
+  backed by Qiming Venture Partners. It pioneered the incentive- and lock-screen-advertising model
+  in China, rewarding users with cash for unlocking their screens, reading content, and engaging
+  with ads. Its flagship products include Coohua Lockscreen (酷划锁屏) and the Tao News (淘新闻)
+  reading-rewards app, serving advertisers across internet, finance, automotive, and e-commerce
+  verticals. At its peak Coohua captured a majority share of China's lock-screen advertising market
+  and returned billions of yuan in cash rewards to users annually. No public API, developer portal,
+  SDK, or machine-readable specification could be found during enrichment; this profile is retained
+  as a company/provider record surfaced from the Qiming portfolio.
 url: https://raw.githubusercontent.com/api-evangelist/coohua/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +31,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Advertising
+- Mobile
+- AdTech
+- Incentive Advertising
+- China
+- Consumer
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +49,8 @@ maintainers:
 common:
 - type: Website
   url: https://coohua.cn
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
