@@ -1,0 +1,135 @@
+generated: '2026-08-12'
+method: searched
+source: https://github.com/coohua-dev
+note: >-
+  No Coohua package exists on npm, PyPI, RubyGems, crates.io, Maven Central, NuGet or
+  pkg.go.dev — all were queried unauthenticated and returned zero results / HTTP 404 for
+  "coohua". What Coohua does publish is a first-party CocoaPods *private spec repository*
+  on its own GitHub organization (github.com/coohua-dev), holding podspecs for the iOS
+  modules behind Coohua Lockscreen (酷划锁屏) and Tao News / NewsEarn (淘新闻). Ownership is
+  confirmed from inside the podspecs themselves: authors are @coohua.com addresses
+  (zhoucheng@coohua.com) and every `s.source` git URL points at gitlab.coohua.com.
+  IMPORTANT — these are internal application modules, not consumer-facing API client
+  SDKs, and they are NOT installable by a third party: the podspecs resolve their source
+  to https://gitlab.coohua.com/..., a host that resolves in DNS (121.42.171.64) but
+  refuses connections from the public internet. The spec repo is public; the code it
+  points at is not. For that reason no `SDKs` pointer is emitted in apis.yml — Coohua
+  ships no client library for any API, and crediting one would misstate the company's
+  developer surface.
+registries_checked:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=coohua
+  results: 0
+- registry: pypi
+  query: https://pypi.org/pypi/coohua/json
+  status: 404
+- registry: rubygems
+  query: https://rubygems.org/api/v1/gems/coohua.json
+  status: 404
+- registry: crates.io
+  query: https://crates.io/api/v1/crates/coohua
+  status: 404
+- registry: cocoapods-trunk
+  note: none of the pods below are published to the public CocoaPods trunk; they exist
+    only in Coohua's own spec repos
+packages:
+- language: objective-c
+  registry: cocoapods-private-spec-repo
+  name: CHFoundation
+  url: https://github.com/coohua-dev/CHSpecs/tree/master/CHFoundation
+  source: https://gitlab.coohua.com/zhoucheng/CHFoundation.git
+  install: 'pod ''CHFoundation'' # requires the coohua-dev/CHSpecs source and access to gitlab.coohua.com'
+  official: true
+  version: 0.1.7
+  published: '2017-12-25'
+  description: CHFoundation for iOS in CooHua Inc. NSString/NSArray/NSData categories.
+  license: MIT
+  installable_publicly: false
+- language: objective-c
+  registry: cocoapods-private-spec-repo
+  name: CHKit
+  url: https://github.com/coohua-dev/CHSpecs/tree/master/CHKit
+  source: https://gitlab.coohua.com/zhoucheng/CHKit.git
+  install: 'pod ''CHKit'' # requires the coohua-dev/CHSpecs source and access to gitlab.coohua.com'
+  official: true
+  version: 0.2.0
+  published: '2017-12-22'
+  description: CHKit for iOS in CooHua Inc. UIImage/UIView/UIButton categories.
+  license: MIT
+  installable_publicly: false
+- language: objective-c
+  registry: cocoapods-private-spec-repo
+  name: CHPushService
+  url: https://github.com/coohua-dev/CHSpecs/tree/master/CHPushService
+  source: https://gitlab.coohua.com/zhubingcheng/CHPushService.git
+  install: 'pod ''CHPushService'' # requires the coohua-dev/CHSpecs source and access to gitlab.coohua.com'
+  official: true
+  version: 0.2.0
+  published: '2018-07-20'
+  description: Push notification wrapper; depends on GTSDK (Getui) and JPush 3.0.9.
+  license: MIT
+  installable_publicly: false
+- language: objective-c
+  registry: cocoapods-private-spec-repo
+  name: NEThirdSDK
+  url: https://github.com/coohua-dev/CHSpecs/tree/master/NEThirdSDK
+  source: https://gitlab.coohua.com/zhoucheng/NEThirdSDK.git
+  install: 'pod ''NEThirdSDK'' # requires the coohua-dev/CHSpecs source and access to gitlab.coohua.com'
+  official: true
+  version: 0.0.38
+  published: '2017-02-13'
+  description: >-
+    Third-party SDK bundle for NewsEarn (淘新闻) — vendors Tencent GDT and Baidu MobAd
+    ad SDKs plus WeChat, QQ and Alibaba service SDKs.
+  license: MIT
+  installable_publicly: false
+- language: objective-c
+  registry: cocoapods-private-spec-repo
+  name: NEAdv
+  url: https://github.com/coohua-dev/Specs/tree/master/NEAdv
+  source: https://gitlab.coohua.com/iOS/NEAdv.git
+  install: 'pod ''NEAdv'' # requires the coohua-dev/Specs source and access to gitlab.coohua.com'
+  official: true
+  version: 0.1.0
+  published: '2020-06-08'
+  description: >-
+    NewsEarn advertising module — subspecs for ADView, FullScreen, Native, Splash,
+    ZhiKe and a vendored Tencent GDT header set.
+  installable_publicly: false
+- language: objective-c
+  registry: cocoapods-private-spec-repo
+  name: NEFoundation
+  url: https://github.com/coohua-dev/Specs/tree/master/NEFoundation
+  source: https://gitlab.coohua.com/iOS/NEFoundation.git
+  install: 'pod ''NEFoundation'' # requires the coohua-dev/Specs source and access to gitlab.coohua.com'
+  official: true
+  version: 0.1.0
+  published: '2020-06-04'
+  description: >-
+    NewsEarn base framework (基础框架) — Bridge, Extensions, Model, Network, UI and
+    Utils subspecs.
+  installable_publicly: false
+decay:
+  newest_release: '2020-06-08'
+  oldest_release: '2017-02-13'
+  note: >-
+    Every first-party package Coohua publishes was last released in 2020 or earlier;
+    four of the six last shipped in 2017–2018. The GitHub organization itself was last
+    updated 2018-11-29 (profile) with the newest repository push in 2022. This is the
+    only provider-published, reliably-dated decay evidence available for Coohua.
+x-evidence:
+- url: https://api.github.com/users/coohua-dev
+  status: 200
+  note: 'type: Organization, public_repos: 8, created 2017-01-04'
+- url: https://github.com/coohua-dev/CHSpecs
+  status: 200
+  note: 'description: "Coohua iOS libraries pod specs"'
+- url: https://registry.npmjs.org/-/v1/search?text=coohua
+  status: 200
+  note: total 0
+- url: https://pypi.org/pypi/coohua/json
+  status: 404
+- url: http://gitlab.coohua.com/
+  status: 0
+  note: DNS resolves to 121.42.171.64; TCP connection refused/timed out from the public
+    internet

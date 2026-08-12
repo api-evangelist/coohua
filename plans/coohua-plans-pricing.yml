@@ -1,0 +1,34 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.coohua.com/partner.html
+plan_count: 0
+note: >-
+  Coohua publishes no plans, tiers, or pricing of any kind. It is not a self-serve API or
+  SaaS product: the commercial surface is an advertising sales relationship. The only
+  commercial page on the live site is 广告合作 ("advertising cooperation",
+  https://www.coohua.com/partner.html), which markets the lock-screen ad platform in
+  prose — full-screen creative, targeting, ad inventory, "reasonable pricing, customized
+  service" — and terminates in a named salesperson, a QQ number and an email address
+  (sale@coohua.com) rather than any rate card, CPM/CPC figure, minimum spend, or signup.
+  There is no advertiser self-serve console, no developer plan, and no published rate
+  card anywhere on coohua.com. plan_count is 0 by observation, not by omission.
+commercial_surface:
+  type: advertising-sales
+  page: https://www.coohua.com/partner.html
+  contact_email: sale@coohua.com
+  self_serve: false
+  rate_card_published: false
+plans: []
+x-evidence:
+- url: https://www.coohua.com/partner.html
+  status: 200
+  note: 广告合作 page — prose ad-platform pitch, sales contact only, no pricing figures
+- url: https://www.coohua.com/contact.html
+  status: 200
+  note: 广告合作/广告代理商加盟 routes to sale@coohua.com
+- url: https://www.coohua.com/index.html
+  status: 200
+  note: >-
+    site root no longer serves Coohua — it serves 海南耀游奇迹 (Hainan Yaoyou Qiji, the
+    猪猪世界 game), filed under 琼ICP备20000955号-2 by 海南耀天网络技术有限公司, though it
+    carries the same Beijing 京公网安备 11010802014467 filing as the legacy Coohua pages

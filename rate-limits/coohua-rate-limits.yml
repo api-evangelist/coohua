@@ -1,0 +1,21 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.coohua.com/
+limit_count: 0
+note: >-
+  No rate limits are documented because no API is documented. Coohua publishes no
+  developer portal, API reference, or machine-readable contract on any host it controls
+  (see well-known/coohua-well-known.yml for the probe record), so there is no request
+  quota, window, burst allowance, or 429 behaviour to record. An honest zero, measured —
+  not a missing measurement.
+headers: []
+limits: []
+x-evidence:
+- url: https://www.coohua.com/about.html
+  status: 200
+  note: corporate About page; site navigation is 首页 / 关于酷划锁屏 / 广告合作 / 常见问题
+    / 联系我们 / 加入我们 — no developer or API entry
+- url: http://developer.coohua.cn/
+  status: 500
+- url: http://api.coohua.cn/
+  status: 500

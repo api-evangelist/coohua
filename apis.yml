@@ -20,8 +20,13 @@ description: >-
   reading-rewards app, serving advertisers across internet, finance, automotive, and e-commerce
   verticals. At its peak Coohua captured a majority share of China's lock-screen advertising market
   and returned billions of yuan in cash rewards to users annually. No public API, developer portal,
-  SDK, or machine-readable specification could be found during enrichment; this profile is retained
-  as a company/provider record surfaced from the Qiming portfolio.
+  SDK, or machine-readable specification could be found during enrichment; advertising business is
+  transacted through a sales contact (sale@coohua.com) on the 广告合作 page rather than through any
+  self-serve or programmatic surface. The company does maintain a GitHub organization
+  (github.com/coohua-dev) publishing CocoaPods spec repositories for the iOS modules behind its two
+  apps, but every podspec resolves its source to an unreachable internal gitlab.coohua.com host, so
+  none of it is consumable by a third party. This profile is retained as a company/provider record
+  surfaced from the Qiming portfolio.
 url: https://raw.githubusercontent.com/api-evangelist/coohua/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -31,7 +36,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-12'
 tags:
 - Company
 - Advertising
@@ -48,9 +53,48 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://coohua.cn
+  url: https://www.coohua.com/about.html
+- type: TermsOfService
+  url: https://www.coohua.com/terms.html
+- type: Support
+  url: https://www.coohua.com/faq.html
+- type: Contact
+  url: https://www.coohua.com/contact.html
+- type: GitHubOrganization
+  url: https://github.com/coohua-dev
+- type: Packages
+  url: packages/coohua-packages.yml
+- type: DomainSecurity
+  url: security/coohua-domain-security.yml
+- type: LLMsTxt
+  url: llms/coohua-llms.txt
+- type: Plans
+  url: plans/coohua-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/coohua-rate-limits.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 6
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Coohua ships consumer reward apps and sells lock-screen ad inventory by email
+    (sale@coohua.com on its 广告合作 page); its own coohua.cn domain is dead — the apex has
+    no A record and www/api/open/developer/docs are a DNS wildcard to 39.106.94.60 that
+    answers openresty HTTP 500 on every path, including "/" — while the surviving
+    coohua.com pages carry no developer, API or SDK entry anywhere in their navigation.
+  evidence:
+  - url: http://developer.coohua.cn/
+    status: 500
+  - url: http://api.coohua.cn/
+    status: 500
+  - url: https://www.coohua.com/partner.html
+    status: 200
+  - url: https://www.coohua.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.coohua.com/openapi.json
+    status: 404
+  checked: '2026-08-12'

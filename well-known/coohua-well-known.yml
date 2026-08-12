@@ -1,0 +1,114 @@
+generated: '2026-08-12'
+method: probed
+source: live GET probes of every Coohua host
+note: >-
+  Recorded absence. Every /.well-known/ path was probed on every host associated with
+  Coohua and not one returned a document. NO WellKnown, SecurityTxt or AgentCard pointer
+  is wired into apis.yml as a result — this file documents an absence and must not be
+  read as a presence. Two distinct failure modes were observed: www.coohua.com serves a
+  static site whose 404 handler returns a 539-byte HTML "Error" page for every unknown
+  path, while the entire coohua.cn zone (a DNS wildcard — www, api, open, developer and
+  docs all answer on 39.106.94.60) returns openresty HTTP 500 for every request including
+  "/" — the .cn domain's application tier is dead, and its apex has no A record at all.
+hosts:
+- host: https://www.coohua.com
+  reachable: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /robots.txt
+    status: 404
+  - path: /sitemap.xml
+    status: 404
+- host: http://coohua.com
+  reachable: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: http://www.coohua.cn
+  reachable: false
+  note: openresty returns HTTP 500 for every path, including "/"
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+  - path: /.well-known/openid-configuration
+    status: 500
+  - path: /.well-known/oauth-authorization-server
+    status: 500
+  - path: /.well-known/api-catalog
+    status: 500
+  - path: /.well-known/ai-plugin.json
+    status: 500
+  - path: /.well-known/agent-card.json
+    status: 500
+  - path: /.well-known/agent.json
+    status: 500
+- host: http://api.coohua.cn
+  reachable: false
+  note: wildcard DNS to 39.106.94.60; openresty HTTP 500 on every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+  - path: /.well-known/agent-card.json
+    status: 500
+  - path: /.well-known/agent.json
+    status: 500
+- host: http://open.coohua.cn
+  reachable: false
+  note: wildcard DNS to 39.106.94.60; openresty HTTP 500 on every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+  - path: /.well-known/agent-card.json
+    status: 500
+  - path: /.well-known/agent.json
+    status: 500
+- host: http://developer.coohua.cn
+  reachable: false
+  note: wildcard DNS to 39.106.94.60; openresty HTTP 500 on every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+  - path: /.well-known/agent-card.json
+    status: 500
+  - path: /.well-known/agent.json
+    status: 500
+- host: http://docs.coohua.cn
+  reachable: false
+  note: wildcard DNS to 39.106.94.60; openresty HTTP 500 on every path
+  documents:
+  - path: /.well-known/security.txt
+    status: 500
+  - path: /.well-known/agent-card.json
+    status: 500
+  - path: /.well-known/agent.json
+    status: 500
+summary:
+  hosts_probed: 7
+  paths_probed: 41
+  documents_found: 0
+  pointers_emitted: []
